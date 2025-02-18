@@ -74,8 +74,8 @@ export default function Head() {
   return (
     <div className="min-h-screen bg-black text-white font-helvetica">
       {/* Navigation */}
-      <header className="fixed w-full top-0 z-50 bg-black/95 backdrop-blur-sm">
-        <div className="container mx-auto max-w-6xl py-6 px-4">
+      <header className="fixed w-full top-0 z-50 bg-black/60 backdrop-blur-sm">
+        <div className="container mx-auto max-w-7xl py-6 px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="text-[22px] font-semibold uppercase text-white tracking-wide">
@@ -137,11 +137,11 @@ export default function Head() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 min-h-screen">
-        <div className="container max-w-6xl mx-auto px-4">
+      <main className="flex items-center justify-center min-h-screen">
+        <div className="container  max-w-7xl mx-auto px-4 mt-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Product Info */}
-            <div className="my-10 space-y-6">
+            <div className="flex flex-col items-left  justify-center space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -9,7 +9,7 @@ const StatsOverlay = () => {
   return (
     <div className="relative w-full bg-cover bg-center   to-black overflow-hidden">
       {/* Background Image Overlay */}
-      <div
+      {/* <div
   className="absolute inset-0 z-0 hidden md:block"  
   style={{
     backgroundImage: "url('./images/sai3.jfif')",
@@ -17,7 +17,7 @@ const StatsOverlay = () => {
     backgroundPosition: "center",
     filter: "brightness(0.3) contrast(1.2)",
   }}
-></div>
+></div> */}
 
 
       {/* Career Timeline Section */}

@@ -45,3 +45,11 @@ body {
   @apply bg-white/20;
 }
 
+.img-mask img {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 40%, black 60%, transparent),
+                      linear-gradient(to top, transparent, black 40%, black 60%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 40%, black 60%, transparent),
+              linear-gradient(to top, transparent, black 40%, black 60%, transparent);
+  -webkit-mask-composite: multiply;
+  mask-composite: intersect;
+}

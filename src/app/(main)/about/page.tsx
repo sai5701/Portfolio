@@ -31,13 +31,13 @@ const AboutMe = () => {
     
 
       {/* Image Section (Appears Second on Mobile) */}
-      <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-right">
-        <img
-          src="./images/sai1.jfif"
-          alt="Sai Krishna Reddy"
-          className="w-64 sm:w-80 md:w-80 lg:h-[70vh] lg:w-auto"
-        />
-      </div>
+      <div className="w-full lg:w-1/2 flex justify-center relative img-mask" data-aos="fade-right">
+  <img
+    src="./images/sai8.png"
+    alt="Sai Krishna Reddy"
+    className="w-64 sm:w-80 md:w-80 lg:h-[70vh] lg:w-auto"
+  />
+</div>
         {/* Content Section (Appears First on Mobile) */}
         <div className="w-full lg:w-1/2 bg-transparent text-white" data-aos="fade-left">
         <Card className="bg-transparent border-none shadow-none">

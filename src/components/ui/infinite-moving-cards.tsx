@@ -80,7 +80,7 @@ export const InfiniteMovingCards = ({
         "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]",
         className
       )}
-      style={{ backgroundColor: "black" }} // Black background for the container
+      style={{ backgroundColor: "black" }}  
     >
       <ul
         ref={scrollerRef}
