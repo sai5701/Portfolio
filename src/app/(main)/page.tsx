@@ -7,6 +7,7 @@ import ContactSection from './footer/page';
 import InfiniteMovingCardsDemo from './projects/projects';
 import EducationSection from './education/page';
 import Footer from './footer/page';
+import ProfessionalExperience from './ProfessionalExperience/page';
 
 const Main = () => {
   return (
@@ -21,10 +22,15 @@ const Main = () => {
         <AboutMe />
       </section>
 
+      <section id="experience" className="   ">
+      <ProfessionalExperience />
+      </section>
+
       {/* Skills Section */}
       <section id="skills" className="   ">
         <SkillsAndAchievements />
       </section>
+    
 
       {/* Testimonials Section */}
       <section id="career">

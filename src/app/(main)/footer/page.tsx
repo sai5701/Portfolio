@@ -6,17 +6,17 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6">
+    <footer className="  text-gray-300 py-6">
       <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between px-6 space-y-4 md:space-y-0">
         
         {/* Left - Name & Copyright */}
         <div className="text-center md:text-left">
-          <h2 className="text-xl font-semibold text-white">
+          <h2 className="text-xl font-semibold text-white"> 
             Sai Krishna Veerapureddy
           </h2>
-          <span className="text-sm text-gray-400 inline-block">
-  "Turning ideas into reality with code." © 2025 |  
-  <a href="mailto:veerapareddysai@gmail.com" className="hover:text-white transition text-orange-300">&nbsp;Contact Me</a>
+          <span className="text-sm text-gray-400 flex inline-block">
+  Turning ideas into reality with code. © 2025 |  
+  <div  className="hover:text-white transition text-orange-300 cursor-pointer" onClick={() => window.open("tel:+916303626864")}>&nbsp;Contact Me</div>
 </span>
 
 

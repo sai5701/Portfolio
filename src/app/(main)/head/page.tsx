@@ -29,7 +29,7 @@ export default function Head() {
     }
   
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "career", "projects", "education"];
+      const sections = ["home", "about", "experience", "skills", "career", "projects"];
       let currentSection = "home";
   
       sections.forEach((section) => {
@@ -75,7 +75,7 @@ export default function Head() {
     <div className="min-h-screen bg-black text-white font-helvetica">
       {/* Navigation */}
       <header className="fixed w-full top-0 z-50 bg-black/60 backdrop-blur-sm">
-        <div className="container mx-auto max-w-7xl py-6 px-4">
+        <div className="container mx-auto max-w-7xl py-4 px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="text-[22px] font-semibold uppercase text-white tracking-wide">
@@ -90,7 +90,7 @@ export default function Head() {
             {/* Desktop Navigation Menu */}
 {/* Desktop Navigation Menu */}
 <nav className="hidden md:flex items-center font-semibold space-x-10">
-  {["Home", "About", "Skills", "Career", "Projects", "Education"].map((item, i) => (
+  {["Home", "About", "Experience", "Skills", "Career", "Projects"].map((item, i) => (
     <button
       key={i}
       onClick={() => scrollToSection(item.toLowerCase())}
@@ -100,10 +100,11 @@ export default function Head() {
     >
       {item}
       <span
-        className={`absolute left-0 -bottom-1 h-[2px] bg-orange-400 transition-all duration-300 ${
-          activeSection === item.toLowerCase() ? "w-full" : "w-0"
-        }`}
-      ></span>
+  className={`absolute left-0 -bottom-1 h-[2px] bg-orange-400 transition-all duration-300 ${
+    activeSection === item.toLowerCase() ? "w-full" : "w-0"
+  }`}
+></span>
+
     </button>
   ))}
 </nav>
@@ -118,13 +119,13 @@ export default function Head() {
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
-    className="md:hidden bg-black/95"
+    className="md:hidden bg-gray-900  py-4"
   >
     {["Home", "About", "Skills", "Career", "Projects", "Education"].map((item, i) => (
       <button
         key={i}
         onClick={() => scrollToSection(item.toLowerCase())}
-        className={`block w-full text-center px-4 py-2 text-[15px] ${
+        className={`block w-full text-center px-4 py-3  text-[15px] ${
           activeSection === item.toLowerCase() ? "text-orange-400" : "text-gray-300"
         } bg-gray-900 hover:text-orange-400 transition-colors duration-300`}
       >
@@ -138,7 +139,7 @@ export default function Head() {
 
       {/* Main Content */}
       <main className="flex items-center justify-center min-h-screen">
-        <div className="container  max-w-7xl mx-auto px-4 mt-5">
+        <div className="container  max-w-7xl mx-auto px-4 mt-[30%] md:mt-0 lg:mt-0 sm:mt-0 xl:mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Product Info */}
             <div className="flex flex-col items-left  justify-center space-y-6">
@@ -154,7 +155,7 @@ export default function Head() {
                 </h4>
 
                 {/* Name and Typewriter */}
-                <h1 className="text-[40px] md:text-[60px] leading-none mt-4 font-bold">
+                <h1 className="text-3xl sm:text-3xl md:text-6xl lg:text-6xl lg:text-6xl leading-none mt-4 font-bold">
                   I'm <span className="text-orange-400">V Sai Krishna</span>
                 </h1>
 
@@ -184,7 +185,7 @@ export default function Head() {
                   <Button
                     variant="outline"
                     className="flex items-center gap-2 w-full sm:w-auto"
-                    onClick={() => window.open("images/sai_krishna_resume.pdf", "_blank")}
+                    onClick={() => window.open("images/Sai_Krishna_ReactJS_Developer3.pdf", "_blank")}
                   >
                     <Download size={18} /> Download Resume
                   </Button>
@@ -212,7 +213,7 @@ export default function Head() {
             </div>
 
             {/* Product Image */}
-            <div className="relative flex justify-center md:justify-end">
+            <div className="relative flex justify-center md:justify-end mt-10">
               <img
                 src="./images/sai4.jpeg"
                 alt="Sai Krishna"

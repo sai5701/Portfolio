@@ -4,10 +4,12 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { Briefcase, Code, Clock } from "lucide-react"
 import { CardContent } from "@/components/ui/card"
+import BackgroundEffect from "../bgeffect/page"
 
 const StatsOverlay = () => {
   return (
     <div className="relative w-full bg-cover bg-center   to-black overflow-hidden">
+     
       {/* Background Image Overlay */}
       {/* <div
   className="absolute inset-0 z-0 hidden md:block"  
@@ -26,7 +28,7 @@ const StatsOverlay = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-3xl md:text-4xl font-bold text-orange-400 mb-8 sm:mb-12 text-center border-b-2 border-orange-400 pb-2"
+          className="text-3xl sm:text-2xl md:text-3xl  inline-block uppercase tracking-wide font-bold text-orange-400 mb-8 sm:mb-12 text-center border-b-2 border-orange-400 pb-2"
         >
           Career Timeline
         </motion.h1>
@@ -36,29 +38,27 @@ const StatsOverlay = () => {
           {/* Projects */}
           <StatCard
             icon={<Code className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />}
-            number="5"
+            number="3"
             label="Projects"
             details={[
               "InstaDe – Graphic Design Tool",
               "HRM Portal – HR Management",
               "School Management System",
-              "Meal Village – Fresh Meal Delivery",
-              "Daily Rasoi – Healthy Home-cooked Meals",
             ]}
           />
 
           {/* Companies */}
           <StatCard
             icon={<Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-green-400" />}
-            number="2"
+            number="1"
             label="Companies"
-            details={["KARYAHUB Solutions – React.js Developer", "G4 Technologies – Frontend Developer"]}
+            details={["KARYAHUB Solutions – React.js Developer"]}
           />
 
           {/* Experience */}
           <StatCard
             icon={<Clock className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />}
-            number="2+"
+            number="3+"
             label="Years Experience"
           />
         </div>

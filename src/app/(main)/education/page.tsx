@@ -40,10 +40,10 @@ const EducationSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900 text-white overflow-hidden">
+    <section className="min-h-screen flex items-center bg-gradient-to-b  text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <span className="flex justify-center">
-          <p className="text-3xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-12 text-center border-b-2 border-orange-400 inline-block">
+          <p className="text-3xl sm:text-2xl md:text-3xl uppercase tracking-wide font-bold text-orange-500 inline-block  mb-12 text-center border-b-2 border-orange-400 inline-block">
             Education
           </p>
         </span>
@@ -57,7 +57,7 @@ const EducationSection = () => {
       }
       
     >
-      <Card className="border border-gray-700 hover:border-orange-500 transition-all duration-300 shadow-md hover:shadow-orange-500/100 rounded-lg overflow-hidden">
+      <Card className=" border-none hover:border-orange-200 bg-gray-800 transition-all duration-300 shadow-md hover:shadow-orange-500/100 rounded-lg overflow-hidden">
         <CardHeader className="p-5 flex flex-row justify-center items-center space-x-4">
           <span>{edu.icon}</span>
           <CardTitle className="text-lg font-semibold text-white border-b-2 border-gray-600 pb-1">

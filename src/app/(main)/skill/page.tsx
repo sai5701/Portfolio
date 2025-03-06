@@ -33,7 +33,7 @@ const SkillsAndAchievements = () => {
       <div className="container mx-auto max-w-5xl">
         {/* Skills Header */}
         <div data-aos="fade-up" className="text-center mb-16">
-          <span className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 text-orange-400 border-b-2 border-orange-400">
+          <span className="text-3xl sm:text-2xl md:text-3xl uppercase tracking-wide font-bold mb-4 text-orange-400 border-b-2 border-orange-400">
             Technical Skills
           </span>
         </div>
@@ -41,7 +41,7 @@ const SkillsAndAchievements = () => {
         {/* Skills Grid - Updated to 3 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
-            <div key={skill.name} data-aos="fade-up" data-aos-delay={index * 200}>
+            <div key={skill.name} data-aos="fade-up" data-aos-delay={index * 50}>
               <div className="overflow-hidden group hover:shadow-lg rounded-lg transition-shadow duration-300 hover:shadow-orange-500/100">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-xl font-semibold flex justify-between items-center">
