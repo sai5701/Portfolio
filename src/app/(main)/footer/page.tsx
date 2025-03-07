@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="  text-gray-300 py-6">
+    <footer className="  text-gray-300 pt-5 pb-5">
       <div className="container mx-auto flex flex-col items-center md:flex-row md:justify-between px-6 space-y-4 md:space-y-0">
         
         {/* Left - Name & Copyright */}
@@ -14,9 +14,9 @@ export default function Footer() {
           <h2 className="text-xl font-semibold text-white"> 
             Sai Krishna Veerapureddy
           </h2>
-          <span className="text-sm text-gray-400 flex inline-block">
-  Turning ideas into reality with code. © 2025 |  
-  <div  className="hover:text-white transition text-orange-300 cursor-pointer" onClick={() => window.open("tel:+916303626864")}>&nbsp;Contact Me</div>
+          <span className="text-sm text-gray-400 flex flex-wrap inline-block mt-3">
+  Turning ideas into reality with code&nbsp; |&nbsp; 
+  <div  className="hover:text-orange-500 transition text-orange-300 cursor-pointer" onClick={() => window.open("tel:+916303626864")}>&nbsp;Contact Me</div>
 </span>
 
 
@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Twitter */}
           <SocialButton
             url="https://twitter.com/yourusername"
-            icon={<Twitter className="w-5 h-5 text-blue-500" />}
+            icon={<Twitter className="w-5 h-5 text-green-500" />}
           />
         </div>
       </div>

@@ -28,13 +28,19 @@ const StatsOverlay = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-2xl md:text-3xl  inline-block uppercase tracking-wide font-bold text-orange-400 mb-8 sm:mb-12 text-center border-b-2 border-orange-400 pb-2"
+          className="text-2xl whitespace-nowrap sm:text-2xl md:text-3xl  inline-block uppercase tracking-wide font-bold text-orange-400 mb-8 sm:mb-12 text-center border-b-2 border-orange-400 pb-2"
         >
           Career Timeline
         </motion.h1>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full max-w-6xl">
+          {/* Experience */}
+          <StatCard
+            icon={<Clock className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />}
+            number="3+"
+            label="Years Experience"
+          />
           {/* Projects */}
           <StatCard
             icon={<Code className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />}
@@ -46,20 +52,12 @@ const StatsOverlay = () => {
               "School Management System",
             ]}
           />
-
           {/* Companies */}
           <StatCard
             icon={<Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-green-400" />}
             number="1"
             label="Companies"
             details={["KARYAHUB Solutions – React.js Developer"]}
-          />
-
-          {/* Experience */}
-          <StatCard
-            icon={<Clock className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />}
-            number="3+"
-            label="Years Experience"
           />
         </div>
       </div>

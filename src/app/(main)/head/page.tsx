@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Twitter, Instagram, Github, Download, Phone, Linkedin, Menu, X, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect"
@@ -18,9 +18,28 @@ export default function Head() {
     { text: "Enthusiast.", className: "text-white" },
   ]
 
+  const menuRef = useRef<HTMLDivElement>(null)
   const [showDescription, setShowDescription] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home");
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false)
+    }
+  }
+
+  if (isMenuOpen) {
+    document.addEventListener("mousedown", handleClickOutside)
+  } else {
+    document.removeEventListener("mousedown", handleClickOutside)
+  }
+
+  return () => document.removeEventListener("mousedown", handleClickOutside)
+}, [isMenuOpen])
+
+
 
   useEffect(() => {
     const savedSection = sessionStorage.getItem("activeSection");
@@ -72,7 +91,7 @@ export default function Head() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white font-helvetica">
+    <div className="min-h-screen   text-white font-helvetica">
       {/* Navigation */}
       <header className="fixed w-full top-0 z-50 bg-black/60 backdrop-blur-sm">
         <div className="container mx-auto max-w-7xl py-4 px-4">
@@ -116,16 +135,17 @@ export default function Head() {
    {/* Mobile Navigation Menu */}
 {isMenuOpen && (
   <motion.nav
+    ref={menuRef} // Attach the ref here
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
-    className="md:hidden bg-gray-900  py-4"
+    className="md:hidden bg-gray-900 py-4"
   >
-    {["Home", "About", "Skills", "Career", "Projects", "Education"].map((item, i) => (
+    {["Home", "About", "Experience", "Skills", "Career", "Projects", "Education"].map((item, i) => (
       <button
         key={i}
         onClick={() => scrollToSection(item.toLowerCase())}
-        className={`block w-full text-center px-4 py-3  text-[15px] ${
+        className={`block w-full text-center px-4 py-3 text-[15px] ${
           activeSection === item.toLowerCase() ? "text-orange-400" : "text-gray-300"
         } bg-gray-900 hover:text-orange-400 transition-colors duration-300`}
       >
@@ -134,6 +154,7 @@ export default function Head() {
     ))}
   </motion.nav>
 )}
+
 
       </header>
 
@@ -192,32 +213,32 @@ export default function Head() {
                 </div>
               </motion.div>
               <div className="flex space-x-6">
-                {/* Social Media Icons */}
-                {[
-                  { icon: Linkedin, url: "https://www.linkedin.com/in/sai-krishna-veerapureddy-b70a54331/" },
-                  { icon: Github, url: "https://github.com/sai5701/Portfolio" },
-                  { icon: Instagram, url: "https://www.instagram.com/_saikrishna.r" },
-                  { icon: Mail, url: "mailto:veerapareddysai@gmail.com" },
-                  { icon: Twitter, url: "https://twitter.com/yourusername" },
-                 
-                ].map((social, index) => (
-                  <Button
-                    key={index}
-                    className="w-8 h-8 rounded-full border border-white/10 hover:border-white/40 transition-colors flex items-center justify-center"
-                    onClick={() => window.open(social.url, "_blank")}
-                  >
-                    <social.icon className="w-6 h-6 text-blue-500" />
-                  </Button>
-                ))}
-              </div>
+  {/* Social Media Icons */}
+  {[
+    { icon: Linkedin, url: "https://www.linkedin.com/in/sai-krishna-veerapureddy-b70a54331/", color: "text-blue-500 hover:text-blue-700" },
+    { icon: Mail, url: "mailto:veerapareddysai@gmail.com", color: "text-red-500 hover:text-red-700" },
+    { icon: Github, url: "https://github.com/sai5701/Portfolio", color: "text-gray-200 hover:text-gray-700" },
+    { icon: Instagram, url: "https://www.instagram.com/_saikrishna.r", color: "text-pink-500 hover:text-pink-700" },
+    { icon: Twitter, url: "https://twitter.com/yourusername", color: "text-green-500 hover:text-green-700" },
+  ].map((social, index) => (
+    <Button
+      key={index}
+      className="w-8 h-8 rounded-full border border-white/10 hover:border-white/40 transition-colors flex items-center justify-center"
+      onClick={() => window.open(social.url, "_blank")}
+    >
+      <social.icon className={`w-6 h-6 ${social.color}`} />
+    </Button>
+  ))}
+</div>
+
             </div>
 
             {/* Product Image */}
-            <div className="relative flex justify-center md:justify-end mt-10">
+            <div className="relative flex justify-center md:justify-end my-10">
               <img
-                src="./images/sai4.jpeg"
+                src="./images/sai4-Photoroom.png"
                 alt="Sai Krishna"
-                className="w-auto h-auto max-h-[50vh] md:max-h-[85vh] object-contain"
+                className="w-auto h-auto  md:max-h-[85vh]   object-contain"
               />
             </div>
           </div>

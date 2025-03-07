@@ -16,22 +16,22 @@ const ProfessionalExperience = () => {
   }, []);
 
   return (
-    <section className="py-12 px-6 text-white flex justify-center">
-      <Card className="w-full border-none p-8 rounded-lg">
+    <section className="py-12 lg:px-14 text-white flex justify-center">
+      <Card className="w-full border-none px-4 rounded-lg">
         <CardHeader>
           <div className="flex justify-center">
             <h2 data-aos="fade-up" className="text-2xl sm:text-3xl text-center">
-              <div className="text-3xl sm:text-2xl md:text-3xl uppercase tracking-wide font-bold text-orange-400 border-b-2 border-orange-400 pb-1 mb-10 inline-block">
+              <div className="text-xl whitespace-nowrap sm:text-2xl md:text-3xl uppercase tracking-wide font-bold text-orange-400 border-b-2 border-orange-400 pb-1 mb-1 lg:mb-10  sm:mb-10 md:mb-10 inline-block">
                 Professional Experience
               </div>
             </h2>
           </div>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="p-0">
           <div
             data-aos="fade-up"
-            className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700"
+            className="bg-gray-900 p-3  lg:p-8 sm:p-8  md:p-8 rounded-lg shadow-lg border border-gray-700"
           >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
               <h3 className="text-xl font-semibold text-white flex items-center gap-2">

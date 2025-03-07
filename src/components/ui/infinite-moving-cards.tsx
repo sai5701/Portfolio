@@ -95,11 +95,11 @@ export const InfiniteMovingCards = ({
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-40 object-cover rounded-lg mt-4"
+                className="w-full h-40 sm:h-40 md:h-40 lg:h-40 object-cover rounded-lg mt-4"
               />
 <div className="flex flex-row justify-between items-center">
 <div className="relative z-20 mt-6 flex flex-col">
-                <span className="text-lg font-semibold text-white">
+                <span className="text-lg whitespace-nowrap font-semibold text-white">
                   {item.name}
                 </span>
                 <span className="text-sm text-gray-400">{item.title}</span>

@@ -43,7 +43,7 @@ const EducationSection = () => {
     <section className="min-h-screen flex items-center bg-gradient-to-b  text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <span className="flex justify-center">
-          <p className="text-3xl sm:text-2xl md:text-3xl uppercase tracking-wide font-bold text-orange-500 inline-block  mb-12 text-center border-b-2 border-orange-400 inline-block">
+          <p className="text-2xl whitespace-nowrap sm:text-2xl md:text-3xl uppercase tracking-wide font-bold text-orange-500 inline-block  mb-12 text-center border-b-2 border-orange-400 inline-block">
             Education
           </p>
         </span>

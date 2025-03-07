@@ -18,7 +18,7 @@ const Main = () => {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="py-20 my-10">
+      <section id="about" className="py-20">
         <AboutMe />
       </section>
 
@@ -33,12 +33,12 @@ const Main = () => {
     
 
       {/* Testimonials Section */}
-      <section id="career">
+      <section id="career" className='py-10'>
         <StatsOverlay />
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="  my-10">
+      <section id="projects" className="py-20 ">
         <InfiniteMovingCardsDemo />
       </section>
 
@@ -48,7 +48,7 @@ const Main = () => {
       </section>
 
       {/* Contact Section */}
-      <section   className=" ">
+      <section   className="">
         <Footer />
       </section>
     </>
