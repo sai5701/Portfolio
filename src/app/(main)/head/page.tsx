@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect"
 import { motion } from "framer-motion"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
+import { tr } from "framer-motion/client"
 
 export default function Head() {
   const descriptionText =
@@ -23,21 +24,20 @@ export default function Head() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home");
 
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-      setIsMenuOpen(false)
-    }
-  }
-
-  if (isMenuOpen) {
-    document.addEventListener("mousedown", handleClickOutside)
-  } else {
-    document.removeEventListener("mousedown", handleClickOutside)
-  }
-
-  return () => document.removeEventListener("mousedown", handleClickOutside)
-}, [isMenuOpen])
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);  
+  
 
 
 
@@ -90,6 +90,7 @@ useEffect(() => {
     setIsMenuOpen(false)
   }
 
+  
   return (
     <div className="min-h-screen   text-white font-helvetica">
       {/* Navigation */}
@@ -102,8 +103,15 @@ useEffect(() => {
             </a>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" className="md:hidden text-orange-400  " onClick={toggleMenu}>
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Button variant="ghost" className="md:hidden text-orange-400 z-50 " >
+              {isMenuOpen && (
+                <div  onClick={() => setIsMenuOpen(false)}>
+                <X size={32}/>
+                </div>) }
+                {!isMenuOpen && (
+                <div  onClick={() => setIsMenuOpen(true)}>
+               <Menu size={32}/>
+                </div>) }
             </Button>
 
             {/* Desktop Navigation Menu */}
@@ -133,27 +141,34 @@ useEffect(() => {
 
         {/* Mobile Navigation Menu */}
    {/* Mobile Navigation Menu */}
-{isMenuOpen && (
+   {isMenuOpen && (
   <motion.nav
     ref={menuRef} // Attach the ref here
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -20 }}
-    className="md:hidden bg-gray-900 py-4"
+    className="md:hidden bg-gray-900 py-4 px-10"
   >
     {["Home", "About", "Experience", "Skills", "Career", "Projects", "Education"].map((item, i) => (
-      <button
-        key={i}
-        onClick={() => scrollToSection(item.toLowerCase())}
-        className={`block w-full text-center px-4 py-3 text-[15px] ${
-          activeSection === item.toLowerCase() ? "text-orange-400" : "text-gray-300"
-        } bg-gray-900 hover:text-orange-400 transition-colors duration-300`}
-      >
-        {item}
-      </button>
+      <div 
+        key={i} 
+        className="space-y-4" 
+        data-aos="fade-up" 
+        data-aos-duration={`${100 + i * 300}`} // Each item gets a delay increasing by 100ms
+      > 
+        <button
+          onClick={() => scrollToSection(item.toLowerCase())}
+          className={`block w-full text-center my-2 py-2 text-[15px] font-semibold bg-black border border-gray-600 rounded-lg ${
+            activeSection === item.toLowerCase() ? "text-orange-400" : "text-gray-300"
+          } hover:text-orange-400 transition-colors duration-300`}
+        >
+          {item}
+        </button>
+      </div>
     ))}
   </motion.nav>
 )}
+
 
 
       </header>
@@ -212,7 +227,9 @@ useEffect(() => {
                   </Button>
                 </div>
               </motion.div>
-              <div className="flex space-x-6">
+              <div className="flex justify-center lg:justify-start space-x-6">
+ 
+
   {/* Social Media Icons */}
   {[
     { icon: Linkedin, url: "https://www.linkedin.com/in/sai-krishna-veerapureddy-b70a54331/", color: "text-blue-500 hover:text-blue-700" },

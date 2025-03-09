@@ -31,7 +31,7 @@ const ProfessionalExperience = () => {
         <CardContent className="p-0">
           <div
             data-aos="fade-up"
-            className="bg-gray-900 p-3  lg:p-8 sm:p-8  md:p-8 rounded-lg shadow-lg border border-gray-700"
+            className="bg-gray-900 p-5 py-8  lg:p-8 sm:p-8  md:p-8 rounded-lg shadow-lg border border-gray-700"
           >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
               <h3 className="text-xl font-semibold text-white flex items-center gap-2">

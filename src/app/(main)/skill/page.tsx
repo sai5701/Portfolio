@@ -7,16 +7,16 @@ import { ArrowUpRight } from "lucide-react"
 
 // Skills data
 const skills = [
-  { name: "React.js", value: 85, color: "from-blue-200 to-cyan-400" },
-  { name: "Next.js", value: 80, color: "from-purple-200 to-pink-400" },
+  { name: "React.js", value: 90, color: "from-blue-200 to-cyan-400" },
+  { name: "Next.js", value: 85, color: "from-purple-200 to-pink-400" },
   { name: "JavaScript", value: 90, color: "from-yellow-200 to-orange-400" },
   { name: "TypeScript", value: 85, color: "from-indigo-200 to-blue-400" },
-  { name: "API Integration", value: 85, color: "from-green-200 to-emerald-400" },
-  { name: "Git", value: 90, color: "from-red-200 to-orange-400" },
-  { name: "HTML", value: 90, color: "from-orange-200 to-yellow-400" },
-  { name: "CSS", value: 90, color: "from-blue-200 to-indigo-500" },
+  { name: "API Integration", value: 95, color: "from-green-200 to-emerald-400" },
+  { name: "Git", value: 95, color: "from-red-200 to-orange-400" },
+  { name: "HTML", value: 95, color: "from-orange-200 to-yellow-400" },
+  { name: "CSS", value: 95, color: "from-blue-200 to-indigo-500" },
 
-  { name: "Tailwind CSS", value: 90, color: "from-teal-500 to-green-400" },
+  { name: "Tailwind CSS", value: 95, color: "from-teal-500 to-green-400" },
 ]
 
 const SkillsAndAchievements = () => {
